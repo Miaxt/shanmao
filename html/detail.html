@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Goods_detail</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/detail.css">
+	<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="../js/magnifier.js"></script>
+	<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../js/shop_car.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$.cookie.json = true;
+			var l_detail_goods = $.cookie("l_goods");
+			$(".pic_preview_goods_name").text(l_detail_goods.name);
+			$(".summary_price_detail").text(l_detail_goods.price);
+			$(".prod_item_number_id").text(l_detail_goods.id);
+			$(".pic_preview_detail,.pic_preview_show,.pic_preview_magnifier_detail").attr('src', l_detail_goods.src);
+		});
+	</script>
+</head>
+<body>
+	<!-- top -->
+	<div class="header_all"></div>
+	<script type="text/javascript">
+		$(".header_all").load("header.html");
+	</script>
+	<!-- detail_level -->
+	<div class="detail_level">
+		<div class="detail_top_level">
+			<h1>男装、女装、内衣</h1>
+			<span class="top_arrow">></span>
+			<span class="girl_dress">
+				<span>
+					<a href="#">女装</a>
+					<i class="top_arrow_down"></i>
+				</span>
+			</span>
+			<span class="top_arrow">></span>
+			<span class="girl_dress">
+				<span>
+					<a href="#">连衣裙</a>
+					<i class="top_arrow_down" id="top_arrow_down_else"></i>
+				</span>
+			</span>
+			<span class="top_arrow">></span>
+			<span class="girl_dress_txt">Five Plus新女秋装印花拼接毛呢圆领高腰长袖连衣裙2133082920 墨绿501 XS</span>
+		</div>
+	</div>
+
+	<div class="detail_pic_info">
+		<div class="detail_pic_scan">
+			<div class="pic_preview"><a href="#"><img class="pic_preview_detail" src="../images/pic_preview (2).jpg" alt="pic_preview" title="pic_preview"></a>
+			<div class="magnifier"></div>
+			</div>
+			<div class="pic_preview_select">
+			<span class="pic_preview_select_left"></span>
+			<img class="pic_preview_show" src="../images/pic_preview (2).jpg" alt="pic_preview" title="pic_preview">
+			<span class="pic_preview_select_right"></span>
+			</div>
+			<div class="detail__pro_share">
+
+			<span style="color:#999999">分享：</span>
+			<a class="share_qzone" title="分享到QQ空间" href="#"></a>
+			<a class="share_tsina" title="分享到新浪微博" href="#"></a>
+			<a class="share_tqq" title="分享到腾讯微博" href="#"></a>
+			<a class="share_renren" title="分享到人人网" href="#"></a>
+			<a class="share_t163" title="分享到网易微博" href="#"></a>
+			<a class="share_more" href="#"></a>
+
+			<div class="detail_pro_collecting">
+				<span>收藏：</span>
+				<b class="collecting_star"></b>
+				<span class="collecting_count">0</span>
+			</div>
+			<div class="detail_pro_compare">
+				<input type="checkbox" id="detail__pro_share_btn" name="">
+				<span class="detail_pro_compare_txt">对比</span>
+			</div>
+			</div>
+		</div>
+		<div class="pic_preview_magnifier"><img class="pic_preview_magnifier_detail" src="../images/pic_preview (2).jpg">
+		</div>
+		<div class="pic_preview_middle">
+			<div class="pic_preview_middle_top">
+				<h1 class="pic_preview_goods_name">Five Plus新女秋装印花拼接毛呢圆领高腰长袖连衣裙2133082920 墨绿501 XS</h1>
+				<div class="pic_preview_middle_list">
+					<div class="pic_preview_middle_list_title">
+						<div class="list_m_price">本店价</div>
+						<div class="list_s_price">市场价</div>
+						<div class="list_evaluate">评价</div>
+						<div class="list_sales">销量</div>
+					</div>
+					<div class="pic_preview_middle_list_info">
+						<div class="list_info_summary_price">
+							<span>￥</span><span class="summary_price_detail">339.00</span>
+							<a href="#">(降价通知)</a>
+						</div>
+						<div class="list_info_original_price">
+							<span>￥406.80</span>
+						</div>
+						<div class="list_info_evaluate"><span>0</span></div>
+						<div class="list_info_sales"><span>0</span></div>
+					</div>
+				</div>
+			</div>
+			<div class="prod_item_number">
+				<span>编 号：</span>
+				<span class="prod_item_number_id">1</span>
+			</div>
+			<div class="detail__pro__distribution">
+				<span>配 送：</span>
+				<div class="distribution_all_place">
+					<span>四川 成都 青羊区</span>
+					<i class="distribution_place"></i>
+				</div>
+			</div>
+			<div class="detail__pro_service">
+				<span>服 务：</span>
+				<span class="service_source">由 <a href="#">5+旗舰店</a> 发货并提供售后服务。
+				</span>
+				<span>[ 该地区不支持配送 ]</span>
+			</div>
+
+			<div class="detail__pro_quantity">
+				<span>数 量：</span>
+				<div class="pro_quantity_opera">
+					<span class="pro_quantity_reduce">-</span>
+					<input type="text" id="pro_quantity_num" name="" value="1">
+					<span class="pro_quantity_increase">+</span>
+				</div>
+				<span class="inventory">库存：993</span>
+			</div>
+			<div class="pic_preview_middle_bottom">
+				<div class="middle_buy_now"><a href="shop_car.html" target="_blank">立即购买</a></div>
+				<div class="middle_addtocar"><i class="middle_addtocar_icon"></i><a href="javascript:void(0);"  class="add_to_shopping_cart">加入购物车</a></div>
+				<span class="purchase_success"></span>
+			</div>
+		</div>
+
+		<div class="pic_preview_right">
+			<div class="pic_preview_right_logo">
+				<img src="../images/five_plus.png" alt="five_plus" title="five_plus">
+			</div>
+			<div class="right_seller_store">
+				<a href="#" title="5+旗舰店" class="right_seller_store_name">5+旗舰店</a>
+				<i class="right_arrow_show_more"></i>
+			</div>
+			<div class="seller_store_grade">
+				<span class="seller_store_total">店铺总分：</span>
+				<div class="store_grade_bar"></div>
+				<span class="seller_store_five"><a href="#">5:00</a>分</span>
+			</div>
+			<div class="store_grade_detail">
+				<ul class="store_grade_detail_1">
+					<li>评分明细</li>
+					<li>商品 5</li>
+					<li>服务 5</li>
+					<li>时效 5</li>
+				</ul>
+				<ul class="store_grade_detail_2">
+					<li>与行业相比</li>
+					<li>100%</li>
+					<li>100%</li>
+					<li>100%</li>
+				</ul>
+			</div>
+			<div class="store_grade_detail_source">
+					<P>公司： <span>商创网络科技有限公司</span></P>
+					<P>所在地： <span>上海 上海市</span></P>
+				</div>
+			<div class="store_grade_contact">	
+				<a href="#"><i class="store_grade_contact_icon"></i>联系客服</a>
+			</div>
+			<div class="store_about_operate">
+				<a href="#" class="entry_store">进入店铺</a>
+				<a href="#" class="follow_store">关注店铺</a>
+			</div>
+		</div>
+	</div>
+	<!-- detail_pro_show -->
+	<div class="detail_pro_show">
+		<div class="detail_pro_show_title">
+			<ul>
+				<li><a href="#">商品详情</a></li>
+				<li><a href="#">商品评论</a></li>
+				<li><a href="#">网友讨论圈</a></li>
+			</ul>
+		</div>
+		<div class="detail_pro_show_content">
+			<div class="detail_pro_show_content_title">
+				<p>
+				<span class="detail_pro_show_content_name">商品名称：Five Plus新女秋装印花拼接毛呢圆领高腰长袖连衣裙2133082920 墨绿501 XS</span>
+				<span class="detail_pro_show_content_id">商品编号：ECS000176</span>
+				<span class="detail_pro_show_content_store">店铺：<a href="#">5+旗舰店</a></span>
+				<span class="detail_pro_show_content_onshelves">上架时间：2015-01-28 21:04:17</span>
+				</p>
+			</div>
+			<div class="detail_pro_show_content_pic">
+				<p><img src="../images/pro_detail_show (1).jpg"></p>
+				<p><img src="../images/pro_detail_show (2).jpg"></p>
+				<p><img src="../images/pro_detail_show (3).jpg"></p>
+			</div>
+			<div class="detail_pro_show_content_proreviews">
+				<div class="proReviews_title">
+					<h2>商品评价</h2>
+					<a href="#">发表评论</a>
+				</div>
+				<div class="proReviews_overview">
+					<div class="goods_rate">
+						<span class="goods_rate_1">100%</span>
+						<span class="goods_rate_2">好评率</span>
+					</div>
+					<div class="goods_rate_detail">
+						<dl>
+							<dt>好评<span>(100%)</span></dt>
+							<dd><div class="goods_rate_detail_1"></div></dd>
+						</dl>
+						<dl>
+							<dt>中评<span>(0%)</span></dt>
+							<dd><div></div></dd>
+						</dl>
+						<dl>
+							<dt>差评<span>(0%)</span></dt>
+							<dd><div></div></dd>
+						</dl>
+					</div>
+				</div>
+				<div class="goods_rate_detail_result">
+						<ul>
+							<li><a href="#">全部(0)</a></li>
+							<li><a href="#">好评(0)</a></li>
+							<li><a href="#">中评(0)</a></li>
+							<li><a href="#">差评(0)</a></li>
+						</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- footer -->
+	<div class="footer_outside"></div>
+	<script type="text/javascript">
+		$(".footer_outside").load('footer.html');
+	</script>
+</body>
+</html>

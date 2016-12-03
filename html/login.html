@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/user.css">
+	<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+	<script type="text/javascript">
+		$(function(){
+		//读取是否有用户名的保存
+			$.cookie.json = true;
+			var userinfos  = $.cookie("username");
+				if(typeof(userinfos) == "object"){
+					var _uname = userinfos._user;
+					$("#login_username").val(_uname);
+				}	
+		//提交
+		$("#loginSubmit").on('click', function() {
+			var username = $('#login_username').val(),
+				password = $('#login_pwd').val();
+			$.ajax({
+				type : "post",
+				url : "login.php",
+				data : "username="+username + "&password="+password,
+				dataType : "json",
+				success : function(data){
+					if(data.status === 0){//
+						$(".login_form").html("欢迎你："+"<br/>" + username+"<br/>正在为你跳转至购物页面...");
+						//将登陆成功的用户保存到cookie中
+						// var d = new Date();
+						// d.setDate(d.getDate() + 7);
+						var userinfo = {
+							"_user" : username,
+							"_pwd" : password
+						};
+						$.cookie.json = true;
+						$.cookie("username",userinfo,{expires:7,path:'/'});
+						//登陆成功跳转
+						setTimeout(function(){
+							location.href = "../index.html."
+						},3000);
+						} else {
+						$("#logo_error").html("用户名或密码错误");
+					}
+				}
+			});
+		});
+	});
+	</script>
+</head>
+<body>
+<!-- loginlogo -->
+<div class="loginlogo">
+	<a href="../index.html" class="login_logo_2015"><img src="../images/logo_2015.png" alt="logo_2015" title="login"></a>
+	<img class="regist_word" src="../images/regist-word.png" alt="regist_word" title="regist_word">
+</div>
+<!-- login_content -->
+<div class="login_content">
+	<div class="login_banner">
+		<img src="../images/login_bg.jpg" alt="login_bg" title="login_bg">
+		<div class="login_form">
+
+			<div class="login_top">
+				<h2>欢迎登录</h2>
+				<a href="register.html" class="free_res">免费注册</a>
+			</div>
+
+			<div class="login_userinfo">
+				<i class="user_logo"></i>
+				<input type="text" name="" id="login_username" placeholder="用户名/邮箱/手机">
+				<i class="pwd_logo"></i>
+				<input type="password" name="" id="login_pwd" placeholder="密码">
+				<span id="logo_error"></span>
+			</div>
+
+			<div class="login_thislogin">
+				<input type="checkbox" name="" class="save_login">
+				<span class="save_userinfo">请保存我这次的登录信息</span>
+			</div>
+
+			<div class="login_result">
+				<a href="../index.html" class="forgetpwd">忘记密码？</a>
+				<input type="submit" name="submit" id="loginSubmit" value="登&nbsp;&nbsp;录">
+			</div>
+
+			<div class="login_else">
+				<h4>用第三方账号直接登录：</h4>
+				<ul>
+				<li><a href="../index.html" class="qq"></a></li>
+				<li><a href="../index.html" class="sina"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- footer -->
+<div class="footer">
+			<ul class="footer_copyright_linklist_1">
+				<li><a href="#">首页</a></li>
+				<li><a href="#">隐私保护</a></li>
+				<li><a href="#">联系我们</a></li>
+				<li><a href="#">免责条款</a></li>
+				<li><a href="#">公司简介</a></li>
+				<li><a href="#">商家入驻</a></li>
+				<li class="footer_copyright_last"><a href="#">意见反馈</a></li>
+			</ul>
+
+			<ul class="footer_copyright_linklist_2">
+				<li><a href="#">模版堂</a></li>
+				<li><a href="#">ECJia</a></li>
+				<li><a href="#">ECtouch</a></li>
+				<li><a href="#">电商学院</a></li>
+				<li><a href="#">ecshop模版堂</a></li>
+				<li><a href="#">ECJia</a></li>
+				<li><a href="#">ECtouch</a></li>
+				<li class="footer_copyright_last"><a href="#">大商创</a></li>
+			</ul>
+			<p>ICP备案证书号: <a href="#">DSC000001</a></p>
+			<p>Powered by<span class="footer_copyright_big">大商创1.0</span></p>
+
+			<div class="footer_copyright_logo">
+				<a href="#"><img src="../images/banquan_1.jpg" alt="banner_ad" title="banner_ad"></a>
+				<a href="#"><img src="../images/banquan_2.jpg" alt="banner_ad" title="banner_ad"></a>
+				<a href="#"><img src="../images/banquan_3.jpg" alt="banner_ad" title="banner_ad"></a>
+				<a href="#"><img src="../images/banquan_4.jpg" alt="banner_ad" title="banner_ad"></a>
+				<a href="#"><img src="../images/banquan_5.jpg" alt="banner_ad" title="banner_ad"></a>
+			</div>
+</div>
+
+</body>
+</html>

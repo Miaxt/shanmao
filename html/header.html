@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index_header</title>
+</head>
+<body>
+	<!-- top -->
+	<div class="top">
+	<div class="top_1">
+
+		<div class="placeTo">
+			<span class="deliver">送货至：</span>
+			<span class="place">成都<span class="city"></span></span>
+		</div>
+
+		<div class="entry">
+			<a href="login.html" title="" class="login">请登录</a>
+			<a href="register.html" title="" class="register">注册</a>
+		</div>
+
+		<ul class="quick_menu">
+			<li><a href="#" title="">我的订单</a></li>
+			<li><a href="#" title="">我的浏览</a></li>
+			<li><a href="#" title="">我的收藏</a></li>
+			<li><a href="#" title="">客户服务</a></li>
+			<li class="quick_menu_last"><a href="#" title="" class="quick_menu_last_a">促销活动</a><span class="sales_promotion"></span>
+			<div class="sales_promotion_hide">
+				<ul>
+					<li><a href="#">拍卖活动</a></li>
+					<li><a href="#">优惠活动</a></li>
+					<li><a href="#">批发市场</a></li>
+					<li><a href="#">超值礼包</a></li>
+				</ul>
+			</div>
+			</li>
+		</ul>
+
+		<div class="shopcar">
+			<i class="shopcar_left"></i>
+			<i class="shopcar_right">></i>
+			<i class="shopcar_num">0</i>
+			<a href="shop_car.html" title="" class="car">购物车</a>
+		</div>
+	</div>
+	</div>
+	<!-- header -->
+	<div class="header">
+		<div class="h_logo"><a href="../index.html"><img src="../images/logo.gif"></a></div>
+		<div class="h_join"><a href="../index.html"><img src="../images/ecsc-join.gif" alt="join" title="join"></a></div>
+
+		<div class="h_search">
+		<div class="products"><a href="#">商品</a><span class="products_direction"></span>
+		<a href="#" title="" class="header_store">店铺</a>
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				$(".products a").hover(function() {
+					$(".header_store").show();
+				}, function() {
+					$(".header_store").hide();
+				});
+			});	
+		</script>
+		<div class="search">
+			<input type="text" name="" class="txt_search" placeholder="手机">
+			<input type="button" name="" class="btn_search"><span class="search_log"></span>
+		</div>
+		<ul class="keyWord">
+			<li><a href="#">周大福</a></li>
+			<li><a href="#">内衣</a></li>
+			<li><a href="#">Five Plus</a></li>
+			<li class="keyWord_last"><a href="#">手机</a></li>
+		</ul>
+		</div>
+		<div class="h_commitment"><a href="#" class="h_commitment_1"></a></div>
+	</div>
+	<!-- nav -->
+	<div class="nav">
+		<div class="all_category"><a href="#" title="">全部商品分类</a><span class="all_category_direction"></span></div>
+		<div class="detail_category">
+			<ul class="detail_category_list">
+				<li><a href="#">首页</a></li>
+				<li><a href="#">食品特产</a></li>
+				<li><a href="#">服装城</a></li>
+				<li><a href="#">大家电</a></li>
+				<li><a href="#">品牌专区</a></li>
+				<li><a href="#">团购</a></li>
+				<li><a href="#">夺宝奇兵</a></li>
+				<li><a href="#">积分商城</a></li>
+				<li><a href="#">预售频道</a></li>
+				<li><a href="#">店铺街</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

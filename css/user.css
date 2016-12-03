@@ -1,0 +1,524 @@
+.loginlogo{
+	width: 1200px;
+	height: 70px;
+	margin: 0 auto;
+	margin-top: 50px;
+	line-height: 70px;
+}
+.regist_word{
+	margin-bottom: 20px;
+}
+.login_content{
+	width: 100%;
+	height: 100%;
+}
+.login_banner{
+	width: 1200px;
+	height: 500px;
+	position: relative;
+	margin: 0 auto;
+}
+.login_form{
+	width: 300px;
+	height: 355px;
+	background: #fff;
+	position: absolute;
+	top: 70px;
+	right: 108px;
+}
+.login_top{
+	width: 240px;
+	height: 40px;
+	line-height: 40px;
+	font-family: "microsoft yahei";
+	margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+.login_top h2{
+	float: left;
+	font-size: 20px;
+	color: #727171;
+	font-weight: 700;
+}
+.free_res{
+	float: right;
+	color: #3894ea;
+}
+.login_userinfo{
+	width: 240px;
+	height: auto;
+	margin-left: 20px;
+}
+#login_username,#login_pwd{
+	width: 240px;
+	height: 40px;
+	text-indent: 35px;
+	font-size: 14px;
+	border: 1px solid #333;
+}
+.login_userinfo i{
+	background: url('../images/login_icons_new.png') no-repeat;
+	font-style: normal;
+}
+#login_username{
+	margin-bottom: 20px;
+}
+.login_userinfo .user_logo{
+	display: block;
+	width: 16px;
+	height: 18px;
+	background-position: -25px -25px;
+	position: absolute;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+.login_userinfo .pwd_logo{
+	display: block;
+	width: 16px;
+	height: 18px;
+	background-position: -25px -48px;
+	position: absolute;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+.login_thislogin{
+	width: 240px;
+	height: 40px;
+	margin-top: 25px;
+	margin-left: 15px;
+	position: relative;
+}
+.save_login{
+	margin-top: 16px;
+	float: left;
+	margin-left: 20px;
+}
+.save_userinfo{
+	float: left; 
+	font-size: 12px;
+	color: #666;
+	margin-top: 15px;
+	font-family: "mircosoft yahei";
+	margin-left: 5px;
+}
+.login_result{
+	width: 200px;
+	height: 50px;
+	margin-top: 10px;
+	margin-left: 20px;
+	line-height: 50px;
+	text-align: center;
+}
+#logo_error{
+	font-size: 12px;
+	height: auto;
+	width: auto;
+	color: red;
+	float: right;
+	margin-top: 2px;
+}
+.forgetpwd{
+	float: left;
+}
+#loginSubmit{
+	float: right;
+	width: 126px;
+	font-size: 18px;
+    color: #fff;
+    font-family: "microsoft yahei";
+    height: 40px;
+    line-height: 30px;
+    border-radius: 5px;
+    background: #ec5151;
+    border: 0;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.login_else{
+	width: 240px;
+	height: 57px;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+.login_else h4{
+	float: left;
+	font-weight: normal;
+	font-size: 14px;
+    color: #9fa0a0;
+    font-family: "microsoft yahei";
+}
+.login_else ul li a{
+	background: url('../images/ecsc_icon.png') no-repeat;
+}
+.login_else .qq{
+	display: block;
+	float: left;
+	width: 24px;
+	height: 24px;
+	background-position: -306px -333px;
+	margin-top: 25px;
+	margin-left: -150px;
+}
+.login_else .sina{
+	display: block;
+	float: left;
+	width: 24px;
+	height: 24px;
+	background-position: -369px -307px;
+	margin-top: 25px;
+	margin-left: -120px;
+}
+/* ===============footer======================== */
+.footer{
+	width: 1200px;
+	height: 271px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 50px;
+	border-top: 1px solid #dcdcdc;
+}
+.footer_copyright_linklist_1{
+	width: 500px;
+	height: 15px;
+	margin-left: 400px;
+	margin-top: 50px;
+}
+.footer_copyright_linklist_1 li{
+	float: left;
+	height: 15px;
+	line-height: 16px;
+	border-right: 1px solid #666;
+}
+.footer_copyright_linklist_2{
+	width: 550px;
+	height: 15px;
+	margin-left: 360px;
+	margin-top: 15px;
+}
+.footer_copyright_linklist_2 li{
+	float: left;
+	height: 15px;
+	line-height: 15px;
+	border-right: 1px solid #666;
+}
+.footer .footer_copyright_last{
+	border-right:0; 
+}
+.footer ul li a{
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.footer a:hover{
+	color: #ec5151;
+	border-bottom: 1px solid #ec5151;
+}
+.footer p{
+	font-size: 12px;
+	color: #666;
+	margin-top: 15px;
+	font-family: "microsoft yahei";
+}
+.footer .footer_copyright_big{
+	color: #ec5051;
+}
+.footer_copyright_logo{
+	width: 1200px;
+	height: 44px;
+	margin-top: 15px;
+}
+.footer_copyright_logo img{
+	margin-right: 10px;
+}
+/* =========================register============================================ */
+.regist_login{
+	float: right;
+	color: #696969;
+	font-size: 12px;
+    font-family: "microsoft yahei";
+}
+.regist_login a{
+	color: #3894ea;
+}
+.register_content{
+	width: 1200px;
+	height: 537px;
+	margin: 0 auto;
+}
+.regist_logo{
+	float: left;
+}
+.register_bg{
+	margin: 60px 60px;
+}
+.register_wrap{
+	width: 570px;
+	width: 570px;
+    min-height: 485px;
+    border: 1px solid #dad6d6;
+    float: right;
+    margin-top: 30px;
+    margin-right: 30px;
+    position: relative;
+}
+.register_top{
+	width: 280px;
+	height: 42px;
+	margin-top: 20px;
+	margin-left: 30px;
+}
+.register_tab li{
+	float: left;
+	font-family: "microsoft yahei";
+    font-size: 16px;
+    color: #727171;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 38px;
+    cursor: pointer;
+}
+.register_info_curr{
+	border-bottom: 2px solid #ec5151;
+    color: #333;
+}
+.register_info_1{
+	width: 500px;
+	height: 360px;
+	margin-left: 30px;
+	position: relative;
+	/* display: none; */
+}
+.res_username_1,.res_email_1,.res_pwd_1,.confirm_pwd_1{
+	width: 238px;
+	height: 18px;
+    padding: 10px 25px 10px 15px;
+    border: 1px solid #c9c9c9;
+    font-size: 14px;
+    font-family: arial,"宋体";
+    overflow: hidden;
+    color: #333;
+    float: left;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.register_info_1 span{
+	font-size: 12px;
+	color: #666;
+	float: right;
+	margin-top: 20px;
+	margin-right: 10px;
+} 
+.register_info_1 i{
+	background: url('../images/login_icons_new.png') no-repeat;
+	font-style: normal;
+}
+.register_info_1 .res_username_logo_1{
+	display: block;
+	width: 16px;
+	height: 18px;
+	background-position: -25px -25px;
+	position: absolute;
+	top: 20px;
+	left: 250px;
+}
+.register_info_1 .res_email_logo_1{
+	display: block;
+	width: 16px;
+	height: 18px;
+	background-position: -77px -3px;
+	position: absolute;
+	left: 250px;
+	top: 80px;
+}
+.register_info_1 .res_pwd_logo_1{
+	display: block;
+	width: 16px;
+	height: 18px;
+	background-position: -25px -48px;
+	position: absolute;
+	left: 250px;
+	top: 140px;
+}
+.register_info_1 .confirm_pwd_logo_1{
+	display: block;
+	width: 16px;
+	height: 18px;
+	background-position: -25px -48px;
+	position: absolute;
+	left: 250px;
+	top: 200px;
+}
+.check_p_1{
+	position: absolute;
+	bottom: 100px;
+}
+.res_clause_1{
+	float: left;
+	margin-top: 22px;
+}
+.check_p_1 .readagree{
+	font-size: 12px;
+	float: left;
+}
+.check_p_1 .readagree a{
+	color: #3a78bf;
+}
+.check_p_1 .readagree a:hover{
+	color: #ec5151;
+}
+.res_submit_1{
+	width: 278px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 5px;
+    background: #ec5151;
+    border: 0;
+    font-family: "microsoft yahei";
+    outline: 0;
+    cursor: pointer;
+    margin-top: 30px;
+}
+/* =================================== */
+.register_info_2{
+	width: 500px;
+	height: 420px;
+	margin-left: 30px;
+	position: absolute;
+	display: none;
+}
+.res_username_2,.res_email_2,.res_pwd_2,.confirm_pwd_2{
+	width: 238px;
+	height: 18px;
+    padding: 10px 25px 10px 15px;
+    border: 1px solid #c9c9c9;
+    font-size: 14px;
+    font-family: arial,"宋体";
+    overflow: hidden;
+    color: #333;
+    float: left;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.message{
+	width: 110px;
+	height: 18px;
+    padding: 10px 25px 10px 15px;
+    border: 1px solid #c9c9c9;
+    font-size: 14px;
+    font-family: arial,"宋体";
+    overflow: hidden;
+    color: #333;
+    float: left;
+    margin-top: 70px;
+    margin-left: -280px;
+    float: left;
+}
+.register_info_2 i{
+	background: url('../images/login_icons_new.png') no-repeat;
+	font-style: normal;
+}
+.register_info_2 .res_username_logo_2{
+	display: block;
+	width: 16px;
+	height: 18px;
+	background-position: -25px -25px;
+	position: absolute;
+	top: 20px;
+	right: 230px;
+}
+.register_info_2 .res_email_logo_2{
+	display: block;
+	width: 16px;
+	height: 18px;
+	background-position: -77px -23px;
+	position: absolute;
+	right: 230px;
+	top: 80px;
+}
+.register_info_2 .res_pwd_logo_2{
+	display: block;
+	width: 16px;
+	height: 18px;
+	background-position: -25px -48px;
+	position: absolute;
+	right: 230px;
+	top: 140px;
+}
+.register_info_2 .confirm_pwd_logo_2{
+	display: block;
+	width: 16px;
+	height: 18px;
+	background-position: -25px -48px;
+	position: absolute;
+	right: 230px;
+	top: 200px;
+}
+.register_info_2 span{
+	font-size: 12px;
+	color: #666;
+	float: right;
+	margin-top: 20px;
+	margin-right: 10px;
+}
+.get_message{
+	width: 110px;
+    height: 36px;
+    line-height: 36px;
+    border: 1px solid #a0a0a0;
+    color: #727171;
+    text-align: center;
+    border-radius: 5px;
+    float: left;
+    margin: 0px 0 0 10px;
+    font-family: "microsoft yahei";
+    margin-top: 70px;
+    margin-left: -100px;
+}
+.get_message:hover{
+	 color: #e23435;
+}
+.check_p_2{
+	float: left;
+	padding-top: 10px;
+}
+.res_clause_2{
+	float: left;
+	margin-top: 120px;
+	margin-left: -260px;
+}
+.register_info_2 .res_clause_2_read{
+	float: left;
+	display: block;
+	margin-top:118px;
+	margin-left: -230px;
+}
+.check_p_2 span{
+	font-size: 12px;
+	float: left;
+}
+.check_p_2 span a{
+	color: #3a78bf;
+}
+.check_p_2 span a:hover{
+	color: #ec5151;
+}
+.res_submit_2{
+	width: 278px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 5px;
+    background: #ec5151;
+    border: 0;
+    font-family: "microsoft yahei";
+    outline: 0;
+    cursor: pointer;
+    margin-top: 30px;
+}

@@ -1,0 +1,233 @@
+.list_content{
+	width: 1200px;
+	height: 183px;
+	margin: 0 auto;
+}
+.list_content_brand{
+	height: 123px;
+	margin-bottom: 10px;
+}
+.list_content_order{
+	height: 40px;
+	line-height: 40px;
+    border: 1px solid #dcdcdc;
+}
+.list_content_brand_left{
+	width: 100px;
+	height: 120px;
+	float: left;
+	background: lightpink;
+}
+.list_content_brand_left ul{
+	float: right;
+	margin-right: 10px;
+}
+.list_content_brand_left ul li{
+	font-size: 12px;
+	color: #666;
+	margin-top: 15px;
+	margin-bottom: 50px;
+}
+.list_content_brand_right{
+	width: 1100px;
+	height: 120px;
+	float: left;
+}
+.list_content_brand_pic{
+	width: 1100px;
+	height: 50px;
+}
+.list_content_brand_pic img{
+	width: 98px;
+	height: 42px;
+	margin-top: 3px;
+	border: 1px solid #fff;
+	overflow: hidden;
+	margin-left: 10px;
+   /*  text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #3a78bf;
+    line-height: 42px; */
+}
+.goods_linklist_info{
+    position: relative;
+}
+.g_id{
+    display: none;
+}
+.list_content_price{
+	width: 1100px;
+	height: 50px;
+	margin-top: 10px;
+	line-height: 50px;
+}
+.list_content_price ul li{
+	float: left;
+	margin-left: 20px;
+}
+#rang_price_min,#rang_price_max{
+	width: 36px;
+    padding: 0 2px;
+    border: 1px solid #ccc;
+    height: 19px;
+    line-height: 19px;
+    font-family: verdana,SimSun;
+    color: #333;
+    margin-left: 10px;
+}
+.entry_price_range span{
+	color: #ccc;
+	margin-left: 5px;
+}
+#rang_price_ok{
+	display: inline-block;
+    height: 21px;
+    width: 50px;
+    border-radius: 2px;
+    background: #F7F7F7;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #DDD;
+    padding: 0 8px;
+    color: #666;
+    margin-left: 8px;
+}
+.list_content_order{
+    font-size: 12px;
+    line-height: 40px;
+    text-align: center;
+}
+.list_content_order a{
+	float: left;
+	padding: 0 20px 0 15px;
+    position: relative;
+    border-right: 1px solid #dcdcdc;
+    color: #666;
+}
+.list_content_order i{
+	font-style: normal;
+	background: url('../images/ecsc_icon.png') no-repeat;
+	float: left;
+	width: 10px;
+    height: 10px;
+    display: inline-block;
+}
+.list_content_order .list_content_order_1{
+    background-position: -17px -37px;
+    margin-left: -20px;
+    margin-top: 15px;
+}
+.list_content_order .list_content_order_2{
+    background-position: -17px -54px;
+    margin-left: -20px;
+    margin-top: 15px;
+}
+.list_content_order .list_content_order_3{
+    background-position: -17px -54px;
+    margin-left: -20px;
+    margin-top: 15px;
+}
+.list_content_order .list_content_order_4{
+    background-position: -17px -54px;
+    margin-left: -20px;
+    margin-top: 15px;
+}
+.list_content_order .list_content_order_5{
+    background-position: -30px -37px;
+    margin-left: -20px;
+    margin-top: 15px;
+}
+.goods_linklist_info{
+	position: relative;
+}
+.middle_addtocar{
+	background: #ec5051;
+    width: 228px;
+    height: 0px;
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+    opacity: 0.9;
+    text-align: center;
+    line-height: 30px;
+    transition: all 1s;
+    display: none;
+}
+.middle_addtocar a{
+	color: #fff;
+    font-size: 16px;
+    z-index: 10;
+    font-family: "microsoft yahei";
+    cursor: pointer;
+}
+.goods_linklist_show{
+	width: 1200px;
+	height: 1645px;
+	padding: 0 25px;
+	margin: 0 auto;
+}
+.goods_linklist_show ul{
+	margin-left: 10px;
+}
+.goods_linklist_show ul li{
+	float: left;
+    width: 226px;
+    height: 318px;
+    position: relative;
+    z-index: 1;
+    border: 2px solid #dcdcdc;
+    margin: -1px -1px 0 0;
+    overflow: hidden;
+    text-align: center;
+}
+.goods_linklist_show ul li:hover{
+    border: 2px solid #ec5051;
+    background: pink;
+}
+.goods_linklist_show ul li:hover .middle_addtocar{
+    height: 30px;
+	display: block;
+	transform:translateY(-35px); 
+}
+.goods_linklist_show img{
+	width: 220px;
+	height: 220px;
+}
+.g_price{
+	width: 228px;
+	height: 22px;
+	line-height: 22px;
+}
+.g_price .g_price_1{
+	font-size: 20px;
+    font-weight: 400;
+    color: #ec5051;
+    float: left;
+    margin-left: 5px;
+    font-weight: bold;
+}
+.g_price .g_price_1_logo{
+    font-size: 16px;
+    font-weight: 400;
+    color: #ec5051;
+    float: left;
+    margin-left: 5px;
+    font-weight: bold;
+}
+.g_price .g_price_2{
+	font-size: 12px;
+	color: #9fa0a0;
+	float: right;
+	margin-right: 5px;
+}
+.g_name{
+	width: 228px;
+	overflow: hidden;
+    height: 40px;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+.g_name a:hover{
+	float: left;
+	color: #ed5051;
+}

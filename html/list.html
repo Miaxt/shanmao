@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Products_list</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/detail.css">
+	<link rel="stylesheet" type="text/css" href="../css/list.css">
+	<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+
+<script type="text/javascript">
+$(function(){
+	$(".header_all").load("header.html");
+	$(".footer_outside").load('footer.html');
+
+	$.when($.ajax("products_info.html"), $.ajax("products_list.json"))
+		.done(function(template, data){
+			template = template[0]; // 模板数据
+			data = data[0]; // 商品信息数据
+
+			var html = "";
+			for (var i in data) {
+				var product = data[i];
+				html += template.replace("{pro_img}", product.src)
+						.replace("{pro_price_1}", product.price_1)
+						.replace("{num}", product.number)
+						.replace("{pro_name}", product.name)
+						.replace("{pro_id}",product.id);
+			}
+			$(".goods_linklist_show ul").append(html);
+
+			$(".goods_linklist_show ul li img").on('click',function(event) {
+				event.preventDefault();
+				var _proid = $(this).parents(".goods_linklist_info").find(".g_id").text(),
+					_proname = $(this).parents(".goods_linklist_info").find(".g_name").text(),
+					_prosrc = $(this).parents(".goods_linklist_info").find(".g_img img").eq(0).attr("src"),
+					_proprice = $(this).parents(".goods_linklist_info").find(".g_price_1").text();
+
+				var _listgoods ={
+						id : _proid,
+						name : _proname,
+						src : _prosrc,
+						price : _proprice,
+						amount : 1
+				};
+
+				$.cookie.json = true;
+				$.cookie("l_goods",_listgoods,{path:'/'});
+				
+				window.location = "detail.html";
+			});
+
+			$(".middle_addtocar").on('click', function(event) {
+				event.preventDefault();
+				var _proid = $(this).parents(".goods_linklist_info").find(".g_id").text(),
+					_proname = $(this).parents(".goods_linklist_info").find(".g_name").text(),
+					_prosrc = $(this).parents(".goods_linklist_info").find(".g_img img").eq(0).attr("src"),
+					_proprice = $(this).parents(".goods_linklist_info").find(".g_price_1").text();
+
+				var _listgoods ={
+						id : _proid,
+						name : _proname,
+						src : _prosrc,
+						price : _proprice,
+						amount : 1
+				};
+					$.cookie.json = true;//库里面的插件配置
+					var l_goods = $.cookie("products");
+						if(!l_goods)
+							l_goods = [];
+						// 判断在products数组中是否已有当前选购的商品信息
+						// 如果已有，则直接修改数量amount
+						var index = exists(_proid,l_goods);
+							if(index !== -1 ){//如果存在
+								l_goods[index].amount++;
+							}else {//不存在
+								l_goods.push(_listgoods);
+							}
+						 console.log(l_goods);
+						$.cookie("products",l_goods,{expires:7,path:"/"});
+						// 提示购买成功
+						var $success = $("<div style='width:100px;height:30px;border:1px solid #ec5051;background:skyblue;color:#fff;lineHeight:30px;position:absolute;left:50px;'>添加成功</div>");
+						$(this).parents(".goods_linklist_info").append($success);
+						setTimeout(function(){
+							$success.remove();
+						},500);
+				});
+					// 如果不存在，则返回-1
+					function exists(id,_listgoods){
+						var idx = -1;//保存的是在数组中对应id元素存在时的下标
+						// 遍历products数组
+						// 每一个元素都会调用回调函数
+						// 回调函数中第一个参数为遍历元素的索引
+						// 第二个参数为遍历到的元素
+						// return false相当于循环中break，退出循环
+						$.each(_listgoods,function(index,element){
+							if(element.id === id){
+								idx = index;
+								return false;
+							}
+						});
+						return idx;
+					}
+			});
+
+		});
+</script>
+</head>
+<body>
+	<!-- top -->
+	<div class="header_all"></div>
+	<!-- detail_level -->
+	<div class="detail_level">
+		<div class="detail_top_level">
+			<h1>男装、女装、内衣</h1>
+			<span class="top_arrow">></span>
+			<span class="girl_dress">
+				<span>
+					<a href="#">女装</a>
+					<i class="top_arrow_down"></i>
+				</span>
+			</span>
+			<span class="top_arrow">></span>
+			<span class="girl_dress">
+				<span>
+					<a href="#">连衣裙</a>
+					<i class="top_arrow_down" id="top_arrow_down_else"></i>
+				</span>
+			</span>
+		</div>
+	</div>
+	<!-- list_content -->
+	<div class="list_content">
+		<div class="list_content_brand">
+			<div class="list_content_brand_left">
+				<ul>
+					<li>品牌：</li>
+					<li>价格：</li>
+				</ul>
+			</div>
+
+			<div class="list_content_brand_right">
+				<div class="list_content_brand_pic">
+					<a href="#"><img src="../images/select_brand.jpg" alt="select_brand" title="select_brand"></a>
+					<a href="#"><img src="../images/select_brand.png" alt="select_brand" title="select_brand"></a>
+				</div>
+				<div class="list_content_price">
+					<ul>
+						<li><a href="#">0-1200</a></li>
+						<li><a href="#">1200-2400</a></li>
+						<li><a href="#">2400-3600</a></li>
+						<li><a href="#">3600-4800</a></li>
+						<li><a href="#">4800-6000</a></li>
+						<li><a href="#">6000-7200</a></li>
+					</ul>
+					<div class="entry_price_range">
+						<input type="text" id="rang_price_min" name="">
+						<span>-</span>
+						<input type="text" id="rang_price_max" name="">
+						<button id="rang_price_ok">确定</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="list_content_order">
+			<a href="#">默认</a><i class="list_content_order_1"></i>
+			<a href="#">销量</a><i class="list_content_order_2"></i>
+			<a href="#">新品</a><i class="list_content_order_3"></i>
+			<a href="#">评论数</a><i class="list_content_order_4"></i>
+			<a href="#">价格</a><i class="list_content_order_5"></i>
+		</div>
+	</div>
+	<!-- goods_linklist_show -->
+	<div class="goods_linklist_show"><ul></ul></div>
+	<!-- footer -->
+	<div class="footer_outside"></div>
+</body>
+</html>

@@ -1,0 +1,170 @@
+.order_content{
+	width: 1200px;
+	height: auto;
+	margin: 0 auto;
+	clear: both;
+	padding-top: 10px;
+}
+.order_content_title{
+	width: 1200px;
+	height: 46px;
+	background: #f5f5f5;
+	border: 1px solid #dddddd;
+	line-height: 46px;
+	text-indent: 15px;
+}
+.order_content_title h1{
+	font-size: 18px;
+	font-family: "microsoft yahei";
+}
+.order_receiver_info{
+	width: 1200px;
+	height: 300px;
+	border: 1px solid #dddddd;
+	position: relative;
+}
+.order_receiver_info h2{
+	display: block;
+	font-size: 12px;
+	font-family: "microsoft yahei";
+	line-height: 40px;
+	margin-left: 15px;
+}
+.order_receiver_info p{
+	margin-left: 30px;
+	margin-bottom: 10px;
+}
+.order_receiver_info p label{
+	font-size: 12px;
+	font-family: "microsoft yahei";
+	color: #000;
+}
+.order_receiver_info input{
+	width: 148px;
+	height: 28px;
+	border: 1px solid #dddddd;
+	margin-left: 15px;
+}
+.order_receiver_info #address_info{
+	display: none;
+	position: absolute;
+	top: 125px;
+	left: 170px;
+}
+#receiver_name{
+	margin-left: 25px;
+}
+#receiver_tel{
+	margin-left: 13px;
+}
+.order_remarks{
+	display: block;
+}
+.order_remarks_txtara{
+	margin-left: 60px;
+	margin-top: -12px;
+}
+.payment_model,.shipping_methods{
+	width: 1200px;
+	height: 152px;
+	border: 1px solid #dddddd;
+}
+.payment_model h2{
+	display: block;
+	font-size: 12px;
+	font-family: "microsoft yahei";
+	line-height: 40px;
+	margin-left: 15px;
+}
+.payment_model input{
+	margin-left: 40px;
+	margin-bottom: 10px;
+}
+.shipping_methods h2{
+	display: block;
+	font-size: 12px;
+	font-family: "microsoft yahei";
+	line-height: 40px;
+	margin-left: 15px;
+}
+.shipping_methods input{
+	margin-left: 40px;
+	margin-bottom: 10px;
+}
+.products_info{
+	overflow: hidden;
+}
+.merchbill{
+	width: 1200px;
+	height: auto;
+	margin: 0 auto;
+	border: 1px solid #dddddd;
+}
+.merchbill h2{
+	display: block;
+	font-size: 12px;
+	font-family: "microsoft yahei";
+	line-height: 40px;
+	margin-left: 15px;
+}
+.merchbill_content{
+	width: 1200px;
+	height: auto;
+	background: #f4fede;
+}
+.order_result{
+	width: 1200px;
+	height: 100px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.coupon{
+	width: 166px;
+	height: 24px;
+	background: #428bca;
+	text-align: center;
+	line-height: 24px;
+	float: left;
+	border: 1px solid #357ebd;
+	margin-top: 40px;
+	margin-left: 10px;
+}
+.coupon a{
+	color: #fff;
+	font-size: 14px;
+	font-family: "microsoft yahei";
+}
+.order_result span{
+	font-size: 12px;
+	font-weight: bold;
+	font-family: "microsoft yahei";
+	float: left;
+}
+.pay_amount{
+	margin-top: 60px;
+	margin-left: 660px;
+	margin-right: 20px;
+}
+.order_result .pay_amount_actually{
+	font-size: 20px;
+    color: #e4393c;
+    font-weight: 700;
+	margin-top: 50px;
+}
+.firmorder{
+	float: right;
+	width: 88px;
+	height: 38px;
+	background: #d9534f;
+	text-align: center;
+	line-height: 38px;
+	border: 1px solid #d43f3a;
+	margin-top: 50px;
+	margin-right: 10px;
+}
+.firmorder a{
+	font-size: 14px;
+	color: #fff;
+	font-family: "microsoft yahei";
+	font-weight: bold;
+}

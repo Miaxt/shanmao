@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Register</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/user.css">
+	<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			/*======================邮箱注册==============================*/
+			// 用户名与密码为3位以上的单词字符
+			$(".res_username_1").on('blur', function(){
+				var unametxt = $(".res_username_1").val(),
+					upwdtxt = $(".res_pwd_1").val(),
+					upwd2txt = $(".confirm_pwd_1").val();
+				if (!(/^\w{3,}$/.test(this.value))) {
+					$(".res_uname_error").html("用户名必须是3位及以上的单词字符");
+					return;
+				}
+				$.ajax({
+					type : "get",
+					url : "check_username.php",
+					data : "username="+unametxt,
+					dataType : "json",
+					success : function(data){
+						if (data.status === 0){
+						 $(".res_uname_error").html("用户名已存在，请重新输入用户名");
+						 } else {
+						$(".res_uname_error").html("用户名可以使用");
+					}
+				}
+			});
+		});	
+		$(".res_pwd_1").on('blur', function() {
+			if (!(/^\w{3,}$/.test(this.value))) {
+				$(".res_pwd_error").html("密码必须是3位及以上的单词字符");
+			}else {
+				$(".res_pwd_error").html("√");
+			}
+		});
+		$(".confirm_pwd_1").on('blur',function(){
+			var upwdtxt = $(".res_pwd_1").val(),
+				upwd2txt = $(".confirm_pwd_1").val();
+			if(upwdtxt !== upwd2txt){
+				$(".res_confirmpwd_error").html("两次密码输入不一致");
+			}else {
+				$(".res_confirmpwd_error").html("√");
+			}
+		});
+
+		$(".res_submit_1").on('click',function(event) {
+				var unametxt = $(".res_username_1").val(),
+					upwdtxt = $(".res_pwd_1").val();
+				$.ajax({
+					type : "post",
+					url : "register_do.php",
+					data : "username="+unametxt + "&password="+upwdtxt,
+					dataType : "json",
+					success : function(data){
+						if (data.status === 0) {
+							$(".register_info_1").html("用户注册成功,三秒钟后自动跳转...");
+								setTimeout(function(){
+									location.href = "login.html";
+								},3000);
+						} else {
+							$(".res_error").html("用户注册失败");
+						}
+					}
+			});
+		});
+
+		/*======================手机号注册==============================*/
+			// 用户名与密码为3位以上的单词字符
+			$(".res_username_2").on('blur', function(){
+				var unametxt = $(".res_username_2").val(),
+					upwdtxt = $(".res_pwd_2").val(),
+					upwd2txt = $(".confirm_pwd_2").val();
+				if (!(/^\w{3,}$/.test(this.value))) {
+					$(".res_uname_error").html("用户名必须是3位及以上的单词字符");
+					return;
+				}
+
+				$.ajax({
+					type : "get",
+					url : "check_username.php",
+					data : "username="+unametxt,
+					dataType : "json",
+					success : function(data){
+						if (data.status === 0){
+						 $(".res_uname_error").html("用户名已存在，请重新输入用户名");
+						 } else {
+						$(".res_uname_error").html("用户名可以使用");
+					}
+				}
+			});
+		});	
+		$(".res_email_2").on('blur',function() {
+			var teltxt = $(".res_email_2").val();
+				if(!(/^[1][3578][0-9]{9}$/.test(this.value))){
+					$(".res_tel_error").html("手机号码格式不正确，请重新输入");
+				}else {
+					$(".res_tel_error").html("√");		
+				}
+		});
+		$(".res_pwd_2").on('blur', function() {
+			if (!(/^\w{3,}$/.test(this.value))) {
+				$(".res_pwd_error").html("密码必须是3位及以上的单词字符");
+			}else {
+				$(".res_pwd_error").html("√");
+			}
+		});
+		$(".confirm_pwd_2").on('blur',function(){
+			var upwdtxt = $(".res_pwd_2").val(),
+				upwd2txt = $(".confirm_pwd_2").val();
+			if(upwdtxt !== upwd2txt){
+				$(".res_confirmpwd_error").html("两次密码输入不一致");
+			}else {
+				$(".res_confirmpwd_error").html("√");
+			}
+		});
+		$(".res_submit_2").on('click',function(event) {
+				var unametxt = $(".res_username_2").val(),
+					upwdtxt = $(".res_pwd_2").val();
+
+				$.ajax({
+					type : "post",
+					url : "register_do.php",
+					data : "username="+unametxt + "&password="+upwdtxt,
+					dataType : "json",
+					success : function(data){
+						if (data.status === 0) {
+							$(".register_info_2").html("用户注册成功,三秒钟后自动跳转...");
+								setTimeout(function(){
+									location.href = "login.html";
+								},3000);
+						} else {
+							$(".res_error").html("用户注册失败");
+						}
+					}
+			});
+		});
+	});
+	</script>
+</head>
+<body>
+	<!-- toplogo -->
+<div class="loginlogo">
+	<a href="../index.html" class="login_logo_2015"><img src="../images/logo_2015.png" alt="logo_2015" title="login"></a>
+	<img class="regist_word" src="../images/regist-word.png" alt="regist_word" title="regist_word">
+	<span class="regist_login">有账号<a href="login.html">在此登录</a></span>
+</div>
+<!-- register_content -->
+<div class="register_content">
+	<div class="regist_logo">
+		<a href="../index.html"><img class="register_bg" src="../images/regist-banner.jpg" alt="register" title="register"></a>
+	</div>
+
+	<div class="register_wrap">
+		<div class="register_top">
+			<ul class="register_tab">
+				<li>邮箱注册</li>
+				<li>手机注册</li>
+			</ul>
+		</div>
+		<div class="register_info">
+		<div class="register_info_1">
+			<input type="text" class="res_username_1" name="" placeholder="用户名">
+			<i class="res_username_logo_1"></i>
+			<span class="res_uname_error"></span>
+			<input type="text" class="res_email_1" name="" placeholder="邮箱地址">
+			<i class="res_email_logo_1"></i>
+			<span class="res_email_error">选填</span>
+			<input type="password" class="res_pwd_1" name="" placeholder="设置密码">
+			<i class="res_pwd_logo_1"></i>
+			<span class="res_pwd_error"></span>
+			<input type="password" class="confirm_pwd_1" name="" placeholder="确认密码">
+			<i class="confirm_pwd_logo_1"></i>
+			<span class="res_confirmpwd_error"></span>
+			<p class="check_p_1">		
+			<input type="checkbox" class="res_clause_1" name="" checked="checked">
+			<span class="readagree">阅读并同意<a href="#">《服务协议》</a></span>
+			</p>
+			<input type="submit" name="" class="res_submit_1" value="同意协议并注册">
+			<span class="res_error"></span>
+	    </div>
+
+
+	  <div class="register_info_2">
+			<input type="text" class="res_username_2" name="" placeholder="用户名">
+			<i class="res_username_logo_2"></i>
+			<span class="res_uname_error"></span>
+			<input type="text" class="res_email_2" name="" placeholder="手机号码">
+			<i class="res_email_logo_2"></i>
+			<span class="res_tel_error"></span>
+			<input type="password" class="res_pwd_2" name="" placeholder="设置密码">
+			<i class="res_pwd_logo_2"></i>
+			<span class="res_pwd_error"></span>
+			<input type="password" class="confirm_pwd_2" name="" placeholder="确认密码">
+			<i class="confirm_pwd_logo_2"></i>
+			<span class="res_confirmpwd_error"></span>
+			<input type="text" name="" class="message" placeholder="短信验证码">
+			<a href="#" class="get_message">获取短信验证码</a>
+			<span class="res_msg_error"></span>
+			<p class="check_p_2">		
+			<input type="checkbox" class="res_clause_2" name="" checked="checked">
+			<span class="res_clause_2_read">阅读并同意<a href="#">《服务协议》</a></span>
+			</p>
+			<input type="submit" name="" class="res_submit_2" value="同意协议并注册">
+			<span class="res_error"></span>
+	    </div>
+	    </div>
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		$(".register_top li").hover(function() {
+				var index = $(this).index();
+				$(this).addClass('register_info_curr').siblings().removeClass('register_info_curr');
+				$('.register_info div').eq(index).show().siblings().hide();
+			});
+	});
+</script>
+<!-- footer -->
+<div class="footer">
+			<ul class="footer_copyright_linklist_1">
+				<li><a href="#">首页</a></li>
+				<li><a href="#">隐私保护</a></li>
+				<li><a href="#">联系我们</a></li>
+				<li><a href="#">免责条款</a></li>
+				<li><a href="#">公司简介</a></li>
+				<li><a href="#">商家入驻</a></li>
+				<li class="footer_copyright_last"><a href="#">意见反馈</a></li>
+			</ul>
+
+			<ul class="footer_copyright_linklist_2">
+				<li><a href="#">模版堂</a></li>
+				<li><a href="#">ECJia</a></li>
+				<li><a href="#">ECtouch</a></li>
+				<li><a href="#">电商学院</a></li>
+				<li><a href="#">ecshop模版堂</a></li>
+				<li><a href="#">ECJia</a></li>
+				<li><a href="#">ECtouch</a></li>
+				<li class="footer_copyright_last"><a href="#">大商创</a></li>
+			</ul>
+			<p>ICP备案证书号: <a href="#">DSC000001</a></p>
+			<p>Powered by<span class="footer_copyright_big">大商创1.0</span></p>
+
+			<div class="footer_copyright_logo">
+				<a href="#"><img src="../images/banquan_1.jpg" alt="banner_ad" title="banner_ad"></a>
+				<a href="#"><img src="../images/banquan_2.jpg" alt="banner_ad" title="banner_ad"></a>
+				<a href="#"><img src="../images/banquan_3.jpg" alt="banner_ad" title="banner_ad"></a>
+				<a href="#"><img src="../images/banquan_4.jpg" alt="banner_ad" title="banner_ad"></a>
+				<a href="#"><img src="../images/banquan_5.jpg" alt="banner_ad" title="banner_ad"></a>
+			</div>
+</div>
+</body>
+</html>

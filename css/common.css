@@ -1,0 +1,192 @@
+html,body,ul,li,ol,dl,dt,dd,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,img,a,div,span,i{
+	margin: 0;
+	padding: 0;
+}
+img{
+	border: 0;
+}
+ul,li,ol{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #666;
+	font-size: 12px;
+	cursor: pointer;
+	font-family: "microsoft yahei";
+}
+input{
+	border: 0;
+}
+/* ===============top=============== */
+.top{
+	height: 30px;
+	background: #efefef;
+}
+.top_1{
+	width: 1200px;
+	height: 30px;
+	margin: 0 auto;
+	line-height: 30px;
+}
+.deliver,.place{
+	font-size: 12px;
+	color: #666;
+}
+.place{
+	margin-left: 7px;	
+	cursor: pointer;
+}
+.placeTo span{
+	background: url(../images/ecsc_icon.png) no-repeat;
+}
+.placeTo .city{
+	width: 12px;
+	height: 8px;
+	display: block;
+	background-position: -263px -292px;
+	margin-left: 120px;
+	margin-top: -18px;
+}
+.place:hover .city{
+	background-position: -279px -292px;
+}
+#address_info{
+	position: absolute;
+	top: 30px;
+	left: 95px;
+	display: none;
+}
+.entry{
+	margin-left: 164px;
+	margin-top: -53px;
+}
+.login,.register{
+	float: left;
+}
+.login{
+	color: #e23435;
+}
+.register{
+	margin-left: 7px;
+}
+.entry a:hover{
+	color:#e23435; 
+}
+.quick_menu{
+	float: left;
+	line-height: 12px;
+	text-align: center;
+	position: relative;
+	margin-left: 650px;
+	margin-top: 5px;
+}
+.quick_menu li{
+	float: left;
+	width: 76px;
+	height: 12px;
+	border-right: 1px solid #a8a8a8;
+}
+.quick_menu .quick_menu_last{
+	border-right: none;
+}
+.quick_menu_last:hover{
+	background: #fff;
+}
+.quick_menu_last:hover div{
+	display: block;
+}
+.quick_menu_last a:hover{
+	background: #fff;
+}
+.quick_menu span{
+	background: url(../images/ecsc_icon.png) no-repeat;
+}
+.quick_menu .sales_promotion{
+	float: right;
+	width: 12px;
+	height: 8px;
+	background-position: -264px -292px;
+	margin-top: 3px;
+}
+.quick_menu li a{
+	margin-left: 6px;
+	margin-right: 6px;
+}
+.quick_menu li a:hover{
+	color:#e23435; 
+}
+.shopcar{
+	width: 134px;
+	height: 40px;
+	float: right;
+	background: url(../images/shopcart_2015.png) no-repeat;
+	text-align: center;
+	line-height: 40px;
+}
+.shopcar i{
+	font-style: normal;
+	background: url(../images/ecsc_icon.png) no-repeat;
+}
+.shopcar .shopcar_left{
+	float: left;
+	width: 16px;
+	height: 16px;
+	background-position: -6px -8px;
+	margin-left: 22px;
+	margin-top: 10px; 
+}
+.shopcar .shopcar_num{
+	float: left;
+	width: 18px;
+	height: 18px;
+	text-align: center;
+	line-height: 18px;
+	border-radius: 10px;
+	background-color: #fff;
+	font-size: 12px;
+	color: #e23435;
+	margin-top: 2px;
+}
+.shopcar .car{
+	font-size: 14px;
+	color: #fff;
+}
+.shopcar .shopcar_right{
+	width: 9px;
+	height: 14px;
+	font:13px/14px "simsun";
+	float: right;
+	color: #fff;
+	font-weight: 700;
+	line-height: 40px;
+	margin-right: 12px;
+}
+.sales_promotion_hide{
+	display: none;
+	position: absolute;
+	line-height: 24px;
+	border: 1px solid #ec5151;
+	border-top: 0;
+	z-index: 9999;
+	width: 154px;
+	height: 60px;
+	right: 0px;
+	top: 15px;
+	background: #fff;
+}
+.sales_promotion_hide ul li{
+	width: 74px;
+	height: 20px;
+	border: 0;
+	margin-top: 5px;
+}
+.sales_promotion_hide ul li a:hover{
+	color: #ec5151;
+}
+
+
+	
+   
+
+

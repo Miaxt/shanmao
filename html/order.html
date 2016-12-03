@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PlaceOrder</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/order.css">
+	<link rel="stylesheet" type="text/css" href="../css/shop_car.css">
+	<link rel="stylesheet" type="text/css" href="../css/user.css">
+	<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../js/order.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//存放所有省市区信息的对象
+			var address = {};
+			$(".place").on('click',function() {
+				$("#address_info").show();
+				// 读取address.json文件中的内容
+				$.getJSON("address.json",function(data){
+					// console.log(data);
+					var reg = data.regions;// 所有地区
+						for (var i = 0; i < reg.length; i++) {
+							// console.log(reg[i]);
+							var province = reg[i];//获取到当前遍历到的省份
+								address[province.name] = {};//相当于address["内蒙古"] = {};
+							var cities = province.regions;//获取当前省份下的所有城市
+							if (!cities) {
+								continue;
+							}
+							// 遍历当前省份下的所有城市
+							for (var j = 0; j < cities.length; j++) {
+								var city = cities[j];//当前遍历到的城市
+									address[province.name][city.name] = city.regions;//相当于address["内蒙古"]["呼伦贝尔"] = [];
+
+							}
+						}
+						// 初始化省份
+						initProvince();			
+				});
+			});
+
+			// 初始化省份信息
+			function initProvince(){
+				var html="";
+				for (var attr in address) {
+					// console.log(attr);
+					html += "<option value = '"+attr+"'>"+attr+"</option>";
+				}
+				$(html).appendTo(":input[name='province']");
+				// 初始化城市信息
+				initCity();
+			}
+
+			// 初始化城市信息
+			function initCity(){
+				//获取当前选择的省份名称
+				var prov = $(":input[name='province']").val();
+				//根据省份找到address对象中找到该属性的值
+				var cities = address[prov];
+				// console.log(cities);
+				
+				var html="";
+				for (var attr in cities) {
+					html+="<option value='"+attr+"'>"+attr+"</option>";
+				}
+				$(":input[name='city']").empty().append(html);
+
+				initDistrict();
+			}
+			function initDistrict(){
+				//获取当前选择的省份与城市名称
+				var prov = $(":input[name='province']").val(),
+					cit = $(":input[name='city']").val();
+				// 根据省份与城市名称找到address对象中对应区县的属性值
+				var districts = address[prov][cit];
+				// console.log(districts);
+
+				// 遍历所有区县
+				var html="";
+
+				for (var i = 0; i < districts.length; i++) {
+						html += "<option value='"+districts[i].name+"'>"+districts[i].name+"</option>";				
+				}
+
+				$(":input[name='district']").empty().append(html);
+			}
+			//省份选择改变
+			$(":input[name='province']").on('change',initCity);
+			// 城市选择改变
+			$(":input[name='city']").on('change',initDistrict);
+		});
+	</script>
+</head>
+<body>
+	<!-- headeroutside -->
+	 <div class="headeroutside"></div>
+	 <script type="text/javascript">
+	 	$(function(){
+	 		$(".headeroutside").load("header.html");
+	 	});
+	 </script>
+	 <!-- order_content -->
+	 <div class="order_content">
+	 	<div class="order_content_title">
+	 		<h1>填写并核对订单信息</h1>
+	 	</div>
+
+	 	<div class="order_receiver_info">
+	 		<h2>收货人信息</h2>
+	 		<div>
+	 				<p><label for="username">姓名</label>
+	 				<input type="text" id="receiver_name" name="">
+	 				</p>
+	 				<p><label for="receive_phone">手机号</label>
+					<input type="text" id="receiver_tel" name="">
+	 				</p>
+	 				<p><label for="receiver_place">配送地址:</label>
+	 					<button class="place">选择地址</button>
+						<div id="address_info">
+							<select name="province"></select>
+							<select name="city"></select>
+							<select name="district"></select>
+						</div>
+	 				</p>
+	 				<p><label for="order_remarks" class="order_remarks">订单备注:</label>
+					<textarea rows="8" cols="60" class="order_remarks_txtara"></textarea>
+	 				</p>
+	 		</div>
+	 	</div>
+	 	<div class="payment_model">
+	 		<h2>支付方式</h2>
+	 		<p><input type="radio" name="pay_money">
+	 		<label>货到付款</label>
+	 		</p>
+	 		<p><input type="radio" name="pay_money">
+			<label>支付宝付款</label>
+	 		</p>
+	 	</div>
+	 	<div class="shipping_methods">
+	 		<h2>配送方式</h2>
+	 		<p><input type="radio" name="delivery">
+	 		<label>即时送货</label>
+	 		</p>
+	 		<p><input type="radio" name="delivery">
+			<label>选择配送时间</label>
+	 		</p>
+	 	</div>
+	 </div>
+	 <!-- merchbill -->
+	 <div class="merchbill">
+	 		<h2>商品清单</h2>
+	 			<div class="products_info">
+				<div class="products_info_list">
+					<div class="pro_info_select">
+						<input type="checkbox" id="select_pro" name="">
+					</div>
+					<div class="pro_info_goods">
+						<div class="goods_img"><a href="#"><img class="goods_img_source" src=""></a></div>
+						<a class="pro_goods_msg"></a>
+					</div>
+					<div class="pro_info_attr">
+						<span class="pro_info_goods_id"></span>
+					</div>
+					<div class="pro_info_price">
+						<span class="pro_info_price_one"></span>
+					</div>
+					<div class="pro_info_quantity">
+						<div class="goods_quantity_revise">
+							<span class="goods_reduce">-</span>
+							<input type="text" class="goods_num" name="" value="">
+							<span class="goods_increase">+</span>
+						</div>
+						<a href="#" class="have_goods">有货</a>
+					</div>
+					<div class="pro_info_sum">
+						<span class="small_sum"></span>
+					</div>
+					<div class="pro_info_operate">
+						<a href="#" class="delate_goods">删除</a>
+						<a href="#" class="remove_goods">移到我的收藏</a>
+					</div>
+				</div>
+				<div class="products_info_list_more"></div>
+			</div>
+			<div class="items_check">
+				<input type="checkbox" id="all_check" name="">
+				<span class="all_select">全选</span>
+			</div>
+		</div> 		
+	 </div>
+	 <!-- order_result -->
+	<div class="order_result">
+	<div class="coupon"><a href="#">使用优惠券抵消部分金额</a></div>
+	<span class="pay_amount">实付金额:</span><span class="pay_amount_actually"></span>
+	<div class="firmorder">
+		<a href="#">确认订单</a>
+	</div>
+	</div>     
+	 <!-- footeroutside -->
+	 <div class="footeroutside"></div>
+	 <script type="text/javascript">
+	 	$(function(){
+	 		$(".footeroutside").load("footer.html");
+	 	});
+	 </script>
+</body>
+</html>

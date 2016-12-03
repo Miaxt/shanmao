@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index_footer</title>
+</head>
+<body>
+	<!-- footer -->
+	<div class="footer_outside">
+	<div class="footer">
+		<div class="footer_linklist">
+			<dl>
+				<dt>新手上路</dt>
+					<dd><a href="#"><i>></i>售后流程</a></dd>
+					<dd><a href="#"><i>></i>购物流程</a></dd>
+					<dd><a href="#"><i>></i>订购方式</a></dd>
+					<dd><a href="#"><i>></i>隐私声明</a></dd>
+			</dl>
+			<dl>
+				<dt>配送与支付</dt>
+					<dd><a href="#"><i>></i>货到付款区域</a></dd>
+					<dd><a href="#"><i>></i>配送支付智能查询</a></dd>
+					<dd><a href="#"><i>></i>支付方式说明</a></dd>
+					<dd><a href="#"><i>></i>上门自提</a></dd>
+			</dl>
+			<dl>
+				<dt>会员中心</dt>
+					<dd><a href="#"><i>></i>资金管理</a></dd>
+					<dd><a href="#"><i>></i>我的收藏</a></dd>
+					<dd><a href="#"><i>></i>我的订单</a></dd>
+			</dl>
+			<dl>
+				<dt>服务保证</dt>
+					<dd><a href="#"><i>></i>退换货原则</a></dd>
+					<dd><a href="#"><i>></i>售后服务保证</a></dd>
+					<dd><a href="#"><i>></i>产品质量保证</a></dd>
+			</dl>
+			<dl>
+				<dt>联系我们</dt>
+					<dd><a href="#"><i>></i>网站故障报告</a></dd>
+					<dd><a href="#"><i>></i>选机咨询</a></dd>
+					<dd><a href="#"><i>></i>投诉与建议</a></dd>
+			</dl>
+
+			<div class="footer_code">
+				<ul class="footer_code_tabs">
+					<li class="footer_code_current">ECJia</li>
+					<li class="footer_code_tabs_ectouch">ECtouch</li>
+				</ul>
+				<div class="footer_code_warp">
+
+					<div class="footer_code_warp_left">
+						<img src="../images/ECJia_code.png" alt="ecjia" title="ecjia">
+					</div>
+
+					<div class="footer_code_warp_right">
+					<img src="../images/ECtouch_code.png" alt="ectouch" title="ectouch"></div>
+
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">		
+			$(".footer_code li").hover(function() {
+				var index = $(this).index();
+				$(this).addClass('footer_code_current').siblings().removeClass('footer_code_current');
+				$('.footer_code_warp div').eq(index).show().siblings().hide();
+			});
+		</script>
+
+		<div class="footer_copyright">
+			<ul class="footer_copyright_linklist_1">
+				<li><a href="#">首页</a></li>
+				<li><a href="#">隐私保护</a></li>
+				<li><a href="#">联系我们</a></li>
+				<li><a href="#">免责条款</a></li>
+				<li><a href="#">公司简介</a></li>
+				<li><a href="#">商家入驻</a></li>
+				<li class="footer_copyright_last"><a href="#">意见反馈</a></li>
+			</ul>
+
+			<ul class="footer_copyright_linklist_2">
+				<li><a href="#">模版堂</a></li>
+				<li><a href="#">ECJia</a></li>
+				<li><a href="#">ECtouch</a></li>
+				<li><a href="#">电商学院</a></li>
+				<li><a href="#">ecshop模版堂</a></li>
+				<li><a href="#">ECJia</a></li>
+				<li><a href="#">ECtouch</a></li>
+				<li class="footer_copyright_last"><a href="#">大商创</a></li>
+			</ul>
+			<p>Powered by<span class="footer_copyright_big">大商创1.0</span></p>
+			<div class="footer_copyright_logo">
+				<a href="#"><img src="../images/banquan_1.jpg" alt="banner_ad" title="banner_ad"></a>
+				<a href="#"><img src="../images/banquan_2.jpg" alt="banner_ad" title="banner_ad"></a>
+				<a href="#"><img src="../images/banquan_3.jpg" alt="banner_ad" title="banner_ad"></a>
+				<a href="#"><img src="../images/banquan_4.jpg" alt="banner_ad" title="banner_ad"></a>
+				<a href="#"><img src="../images/banquan_5.jpg" alt="banner_ad" title="banner_ad"></a>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

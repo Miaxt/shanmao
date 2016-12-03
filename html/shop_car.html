@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Shop_car</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/shop_car.css">
+	<link rel="stylesheet" type="text/css" href="../css/user.css">
+	<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src='../js/jquery.cookie.js'></script>
+	<script type="text/javascript" src='../js/shop_car.js'></script>
+</head>
+<body>
+	<!-- top -->
+	<div class="top">
+	<div class="top_1">
+
+		<div class="placeTo">
+			<span class="deliver">送货至：</span>
+			<span class="place">成都<span class="city"></span></span>
+		</div>
+
+		<div class="entry">
+			<a href="login.html" title="" class="login">请登录</a>
+			<a href="register.html" title="" class="register">注册</a>
+		</div>
+
+		<ul class="quick_menu">
+			<li><a href="#" title="">我的订单</a></li>
+			<li><a href="#" title="">我的浏览</a></li>
+			<li><a href="#" title="">我的收藏</a></li>
+			<li><a href="#" title="">客户服务</a></li>
+			<li class="quick_menu_last"><a href="#" title="" class="quick_menu_last_a">促销活动</a><span class="sales_promotion"></span>
+			<div class="sales_promotion_hide">
+				<ul>
+					<li><a href="#">拍卖活动</a></li>
+					<li><a href="#">优惠活动</a></li>
+					<li><a href="#">批发市场</a></li>
+					<li><a href="#">超值礼包</a></li>
+				</ul>
+			</div>
+			</li>
+		</ul>
+		<div class="shopcar">
+			<i class="shopcar_left"></i>
+			<i class="shopcar_right">></i>
+			<i class="shopcar_num">0</i>
+			<a href="shop_car.html" title="" class="car">购物车</a>
+		</div>
+
+	</div>
+	</div>
+	<!-- header -->
+	<div class="header">
+		<div class="header">
+		<div class="h_logo"><a href="../index.html"><img src="../images/logo.gif"></a></div>
+		<div class="h_join"><a href="../index.html"><img src="../images/ecsc-join.gif" alt="join" title="join"></a></div>
+
+		<div class="h_search">
+		<div class="products"><a href="#">商品</a><span class="products_direction"></span>
+		<a href="#" title="" class="header_store">店铺</a>
+		</div>
+		<div class="search">
+			<input type="text" name="" class="txt_search" placeholder="手机">
+			<input type="button" name="" class="btn_search"><span class="search_log"></span>
+		</div>
+		<ul class="keyWord">
+			<li><a href="#">周大福</a></li>
+			<li><a href="#">内衣</a></li>
+			<li><a href="#">Five Plus</a></li>
+			<li class="keyWord_last"><a href="#">手机</a></li>
+		</ul>
+		</div>
+		<div class="h_commitment"><a href="#" class="h_commitment_1"></a></div>
+	</div>
+	</div>
+	<!-- car_content -->
+	<div class="car_content">
+		<div class="shop_car_content">
+			<div class="car_first">
+				<div class="car_first_title">
+					<i class="car_first_title_logo"></i>
+					<h3>购物车(&nbsp;<span>0</span>&nbsp;)</h3>
+				</div>
+				<div class="shop_car_place">
+					<span>配送至：</span>
+					<div class="detail_place">
+						<span>四川 成都 青羊区</span>
+						<i class="arrive_place"></i>
+					</div>
+				</div>
+			</div>
+
+			<div class="car_products_items">
+				<div class="items_check">
+					<input type="checkbox" id="all_check" name="">
+					<span class="all_select">全选</span>
+				</div>
+				<div class="car_products_goods">商品</div>
+				<div class="car_products_attr">编号</div>
+				<div class="car_products_price">单价(元)</div>
+				<div class="car_products_quantity">数量</div>
+				<div class="car_products_sum">小计(元)</div>
+				<div class="car_products_action">操作</div>
+			</div>
+
+			<div class="products_info">
+				<!-- <div class="store_name">
+					<input type="checkbox" id="select_store" name="">
+					<span class="store_name_list">5+旗舰店</span>
+				</div> -->
+				<div class="products_info_list">
+					<div class="pro_info_select">
+						<input type="checkbox" id="select_pro" name="">
+					</div>
+					<div class="pro_info_goods">
+						<div class="goods_img"><a href="#"><img class="goods_img_source" src=""></a></div>
+						<a class="pro_goods_msg"></a>
+					</div>
+					<div class="pro_info_attr">
+						<span class="pro_info_goods_id"></span>
+					</div>
+					<div class="pro_info_price">
+						<span class="pro_info_price_one"></span>
+					</div>
+					<div class="pro_info_quantity">
+						<div class="goods_quantity_revise">
+							<span class="goods_reduce">-</span>
+							<input type="text" class="goods_num" name="" value="">
+							<span class="goods_increase">+</span>
+						</div>
+						<a href="#" class="have_goods">有货</a>
+					</div>
+					<div class="pro_info_sum">
+						<span class="small_sum"></span>
+					</div>
+					<div class="pro_info_operate">
+						<a href="#" class="delate_goods">删除</a>
+						<a href="#" class="remove_goods">移到我的收藏</a>
+					</div>
+				</div>
+				<div class="products_info_list_more"></div>
+			</div>
+		</div>
+	</div>
+	<!-- products_select_result -->
+	<div class="products_select_result">
+				<div class="products_select_result_opera">
+					<input type="checkbox" id="result_select" name="">
+					<span>全选</span>
+					<a href="#" class="del_pitchon">删除选中的商品</a>
+					<a href="#" class="clear_shopcart">清空购物车</a>
+				</div>
+				<div class="result_count">
+					<div class="result_count_indication">已选择<span></span>件商品</div>
+					<div class="result_count_save"><span>已节省：</span><span class="result_count_save_money">￥0.00</span></div>
+					<div class="result_count_sum"><span class="result_count_total">总价(不含运费)： </span><span class="result_count_sum_total"></span></div>
+					<div class="result_count_balance"><a href="order.html" class="submit_order">提交订单</a></div>
+				</div>
+			</div>
+	<!-- guess like -->
+	<div class="guess_like">
+				<div class="like_nav">
+					<ul>
+						<li>最近浏览</li>
+						<li>猜你喜欢</li>
+						<li>掌柜推荐</li>
+					</ul>
+				</div>
+				<div class="like_linklist">
+					<ul>
+						<li>
+						<div class="like_linklist_content">
+							<div class="like_pic"><a href="#"><img src="../images/like_list (1).jpg" alt="like_linklist" title="like_linklist"></a></div>
+							<div class="like_price"><span>￥83.60</span></div>
+							<div class="like_name"><a href="#">爱华仕oiwas 荷兰风车大容量旅行男女休闲双肩14寸15.6寸电脑背包4000黑色</a></div>
+							<div class="like_seller">
+								<a href="#">闪猫商城</a>
+								<span>销量：1</span>
+							</div>
+						</div>
+						</li>
+						<li>
+							<div class="like_linklist_content">
+							<div class="like_pic"><a href="#"><img src="../images/like_list (2).jpg" alt="like_linklist" title="like_linklist"></a></div>
+							<div class="like_price"><span>￥83.60</span></div>
+							<div class="like_name"><a href="#">爱华仕oiwas 荷兰风车大容量旅行男女休闲双肩14寸15.6寸电脑背包4000黑色</a></div>
+							<div class="like_seller">
+								<a href="#">闪猫商城</a>
+								<span>销量：1</span>
+							</div>
+						</div>
+						</li>
+						<li>
+							<div class="like_linklist_content">
+							<div class="like_pic"><a href="#"><img src="../images/like_list (3).jpg" alt="like_linklist" title="like_linklist"></a></div>
+							<div class="like_price"><span>￥83.60</span></div>
+							<div class="like_name"><a href="#">爱华仕oiwas 荷兰风车大容量旅行男女休闲双肩14寸15.6寸电脑背包4000黑色</a></div>
+							<div class="like_seller">
+								<a href="#">闪猫商城</a>
+								<span>销量：1</span>
+							</div>
+						</div>
+						</li>
+						<li>
+							<div class="like_linklist_content">
+							<div class="like_pic"><a href="#"><img src="../images/like_list (4).jpg" alt="like_linklist" title="like_linklist"></a></div>
+							<div class="like_price"><span>￥83.60</span></div>
+							<div class="like_name"><a href="#">爱华仕oiwas 荷兰风车大容量旅行男女休闲双肩14寸15.6寸电脑背包4000黑色</a></div>
+							<div class="like_seller">
+								<a href="#">闪猫商城</a>
+								<span>销量：1</span>
+							</div>
+						</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+<!-- footer -->
+<div class="footer">
+			<ul class="footer_copyright_linklist_1">
+				<li><a href="#">首页</a></li>
+				<li><a href="#">隐私保护</a></li>
+				<li><a href="#">联系我们</a></li>
+				<li><a href="#">免责条款</a></li>
+				<li><a href="#">公司简介</a></li>
+				<li><a href="#">商家入驻</a></li>
+				<li class="footer_copyright_last"><a href="#">意见反馈</a></li>
+			</ul>
+
+			<ul class="footer_copyright_linklist_2">
+				<li><a href="#">模版堂</a></li>
+				<li><a href="#">ECJia</a></li>
+				<li><a href="#">ECtouch</a></li>
+				<li><a href="#">电商学院</a></li>
+				<li><a href="#">ecshop模版堂</a></li>
+				<li><a href="#">ECJia</a></li>
+				<li><a href="#">ECtouch</a></li>
+				<li class="footer_copyright_last"><a href="#">大商创</a></li>
+			</ul>
+			<p>ICP备案证书号: <a href="#">DSC000001</a></p>
+			<p>Powered by<span class="footer_copyright_big">大商创1.0</span></p>
+
+			<div class="footer_copyright_logo">
+				<a href="#"><img src="../images/banquan_1.jpg" alt="banner_ad" title="banner_ad"></a>
+				<a href="#"><img src="../images/banquan_2.jpg" alt="banner_ad" title="banner_ad"></a>
+				<a href="#"><img src="../images/banquan_3.jpg" alt="banner_ad" title="banner_ad"></a>
+				<a href="#"><img src="../images/banquan_4.jpg" alt="banner_ad" title="banner_ad"></a>
+				<a href="#"><img src="../images/banquan_5.jpg" alt="banner_ad" title="banner_ad"></a>
+			</div>
+</div>
+</body>
+</html>
