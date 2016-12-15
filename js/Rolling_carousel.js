@@ -4,7 +4,7 @@
 			var $lis = $(".banner_pic li"),//获取所有的li，即所有的图片张数
 				len = $lis.length,//图片总长度
 				currentIndex = 0,//当前图片索引
-				nextIndex = 1,//即将显示的的图片索引
+				nextIndex = 1,//即将显示的图片索引
 				html = "",//空字符串
 				timer = null;//计时器
 
